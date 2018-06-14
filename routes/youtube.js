@@ -20,11 +20,7 @@ router.get('/statistics', async (req, res, next) => {
     auth: client
   })
 
-  const subscriptions = await youtube.subscriptions.list({part: 'subscriberSnippet', mySubscribers: true})
   const statistics = await youtube.channels.list({part: 'statistics', mine: true})
-
-  console.log(subscriptions.data.pageInfo.totalResults)
-  console.log(JSON.stringify(statistics.data))
 
   statistics.data.items.forEach(async (channel) => {
     try {
