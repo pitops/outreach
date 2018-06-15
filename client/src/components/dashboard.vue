@@ -92,6 +92,8 @@
                 background-color: #333;
                 box-shadow: 0 0 0.05em black inset;
                 position: relative;
+                display: block;
+                min-width: 200px;
 
                 &.primary {
                     .counter {
@@ -103,12 +105,16 @@
                 &.secondary {
                     .counter {
                         font-size: 3em;
-                        padding: 20px 0;
+                        padding: 40px 20px;
                     }
                     .heading {
                         font-size: 14px;
                     }
                 }
+            }
+
+            .counter {
+                display: block;
             }
 
             .secondary-sections {
