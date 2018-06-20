@@ -1,4 +1,3 @@
-const path = require('path')
 const cors = require('cors')
 const logger = require('morgan')
 const express = require('express')
