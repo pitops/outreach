@@ -53,7 +53,7 @@
 
       setInterval(function () {
         this.pollYoutubeStatistics()
-      }.bind(this), 300000)
+      }.bind(this), 60000)
     }
   }
 </script>
