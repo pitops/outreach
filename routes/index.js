@@ -1,9 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-/* GET home page. */
+const authRouter = require('../routes/auth')
+const youtubeRouter = require('../routes/youtube')
+
 router.get('/', function (req, res, next) {
-  res.render('index', {title: 'Express'})
+  res.send('hello')
 })
+
+router.use('/auth', authRouter)
+router.use('/youtube', youtubeRouter)
 
 module.exports = router
