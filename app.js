@@ -15,6 +15,10 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const app = express()
 
+if (process.env.PRODUCTION === 'true') {
+  app.use(express.static('./client/dist'))
+}
+
 app.use(cors())
 
 app.use(logger('dev'))
@@ -23,6 +27,12 @@ app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 
 app.use('/', routes)
+
+if (process.env.PRODUCTION === 'true') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve('./client/dist/index.html'))
+  })
+}
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
