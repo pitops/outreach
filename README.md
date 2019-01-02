@@ -1,5 +1,7 @@
 # Outreach
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pitops/outreach.svg)](https://greenkeeper.io/)
+
 Is a social media statistics management platform. For now it only shows youtube statistics by checking for an update every 60 seconds.
 
 ## SETUP
